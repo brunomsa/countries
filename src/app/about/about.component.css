@@ -35,7 +35,7 @@ main{
 }
 
 .flag{
-    width: 480px;
+    width: 490px;
     margin: 20px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 8px;
 }
@@ -48,27 +48,29 @@ main{
     padding: 8px 0;
 }
 
+.content-about a{
+    color: #6d2080;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: rgb(109, 32, 128);
+}
+
 .borders{
-    margin: 50px 0 0 20px;
-    width: 70%;
-    margin: 50px auto;
+    margin: 40px 80px;
 }
 
 .borders > div{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 40px;
+    justify-content: space-evenly;
 }
 
 .borders img{
-    max-width: 280px;
+    width: 280px;
     margin-bottom: 30px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     cursor: pointer;
 }
-
-
 
 @media (max-width:950px){
     .flag{
@@ -101,7 +103,7 @@ main{
         justify-content: center;
     }
     .borders img{
-        margin-right: 10px;
+        margin-right: 20px;
     }
 }
 
@@ -127,8 +129,8 @@ main{
         width: 280px;
     }
 
-    .borders img{
+/*     .borders img{
         margin-right: 0;
         width: 220px;
-    }
+    } */
 }

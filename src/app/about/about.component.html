@@ -1,6 +1,6 @@
 <header id="home">
     <img src="../../assets/footer_mova.svg" alt="Logo Mova">
-    <button mat-stroked-button routerLink="/home"><mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_return</mat-icon><span>Voltar</span></button>
+    <button mat-stroked-button routerLink="/home" ><mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_return</mat-icon><span>Voltar</span></button>
 </header>
 
 <main>
@@ -11,7 +11,7 @@
         <div class="content-about">
             <p>Nome: {{cs.currentCountry.name}}</p>
             <p *ngIf="cs.currentCountry.capital">Capital: {{cs.currentCountry.capital}}</p>
-            <p>Região: <a href="">{{cs.currentCountry.region}}</a></p>
+            <p>Região: <a (click)="onClickRegionCountry(cs.currentCountry.region)">{{cs.currentCountry.region}}</a></p>
             <p *ngIf="cs.currentCountry.subregion">Sub-região: {{cs.currentCountry.subregion}}</p>
             <p>População: {{cs.currentCountry.population | number}}</p>
             <p>Línguas: {{cs.currentCountry.languages}}</p>
@@ -21,7 +21,7 @@
         <p>Países Vizinhos:</p>
         <div *ngIf="cs.currentCountry.borders.length > 0">
             <ng-container *ngFor="let x of cs.currentBorders">
-                <img src="{{x.flag}}" alt="Flag {{x.name}}" href="#home" (click)="cs.onClickCountry(x)">
+                <img src="{{x.flag}}" alt="Flag {{x.name}}" href="#home" (click)="cs.onClickBorderCountry(x)">
             </ng-container>
         </div>
         <div *ngIf="cs.currentCountry.borders.length == 0">
