@@ -1,0 +1,32 @@
+<header id="home">
+    <img src="../../assets/footer_mova.svg" alt="Logo Mova">
+    <button mat-stroked-button routerLink="/home"><mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_return</mat-icon><span>Voltar</span></button>
+</header>
+
+<main>
+    <section class="about">
+        <div>
+            <img class="flag" src="{{cs.currentCountry.flag}}" alt="Flag {{cs.currentCountry.name}}">
+        </div>
+        <div class="content-about">
+            <p>Nome: {{cs.currentCountry.name}}</p>
+            <p *ngIf="cs.currentCountry.capital">Capital: {{cs.currentCountry.capital}}</p>
+            <p>Região: <a href="">{{cs.currentCountry.region}}</a></p>
+            <p *ngIf="cs.currentCountry.subregion">Sub-região: {{cs.currentCountry.subregion}}</p>
+            <p>População: {{cs.currentCountry.population | number}}</p>
+            <p>Línguas: {{cs.currentCountry.languages}}</p>
+        </div>
+    </section>
+    <section class="borders">
+        <p>Países Vizinhos:</p>
+        <div *ngIf="cs.currentCountry.borders.length > 0">
+            <ng-container *ngFor="let x of cs.currentBorders">
+                <img src="{{x.flag}}" alt="Flag {{x.name}}" href="#home" (click)="cs.onClickCountry(x)">
+            </ng-container>
+        </div>
+        <div *ngIf="cs.currentCountry.borders.length == 0">
+            <p>Não exitem países vizinhos</p>
+        </div>  
+    </section>
+</main>
+

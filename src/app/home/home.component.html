@@ -1,0 +1,46 @@
+<header>
+    <img src="../../assets/footer_mova.svg" alt="Logo Mova">
+</header>
+
+<main>
+    <section class="form">
+        <form (ngSubmit)="searchCountry()">
+            <div class="filter">
+                <mat-form-field appearance="fill">
+                    <mat-label>Filtrar por</mat-label>
+                    <mat-select [(value)]="filter_selected" >
+                        <mat-option>Escolha uma opção</mat-option>
+                        <mat-option value="Região" (click)="getSelectOptions()">Região</mat-option>
+                        <mat-option value="Capital" (click)="getSelectOptions()">Capital</mat-option>
+                        <mat-option value="Língua" (click)="getSelectOptions()">Língua</mat-option>
+                        <mat-option value="País" (click)="getSelectOptions()">País</mat-option>
+                        <mat-option value="Código de Ligação" (click)="getSelectOptions()">Código de Ligação</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div *ngIf="filter_selected" class="second-select">
+                <mat-form-field appearance="fill">
+                    <mat-label>{{filter_selected}}</mat-label>
+                    <mat-select [(value)]="currentOption">
+                        <mat-option>Escolha uma opção</mat-option>
+                        <mat-option *ngFor="let x of cs.select" value="{{x}}">{{x}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <button type="submit" class="btn-search" mat-raised-button [disabled]="!filter_selected || !currentOption">Pesquisar</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="content">
+        <div *ngIf="filter_selected && currentOption" class="flag">
+            <ng-container *ngFor="let x of select_response">
+                <img src="{{x.flag}}" alt="Flag {{x.name}}" (click)="cs.onClickCountry(x)">
+            </ng-container>
+        </div>
+        <div *ngIf="!filter_selected && !currentOption" class="flag">
+            <img src="{{cs.currentCountry.flag}}" alt="Flag {{cs.currentCountry.name}}" (click)="cs.onClickCountry(cs.currentCountry)">
+        </div>
+    </section>
+</main>
