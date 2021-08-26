@@ -28,12 +28,12 @@ export class CountriesService {
 
   constructor(private http: HttpClient, private router: Router) { } 
 
-  filter_selected: string = '';
+  filterSelected: string = '';
   currentOption: string = '';
   currentFilter: string = '';
   urlFilter:string = '';
   select: Object[] = [];
-  select_response: any[] = [];
+  selectResponse: any[] = [];
   languages: Languages[] = [];
   currentlang: Languages = {
     code: '',
@@ -99,7 +99,7 @@ export class CountriesService {
   }
 
   getCoutriesByRegion(value: string){
-    this.filter_selected = 'Região';
+    this.filterSelected = 'Região';
     this.currentFilter = 'region';
     this.currentOption = value;
     this.select = []
@@ -127,11 +127,10 @@ export class CountriesService {
         if(this.languages[i].name == this.currentOption)
           code_lang = this.languages[i].code;
       }
-      return this.getCountryByFilter(this.urlFilter,code_lang).subscribe(res => this.select_response = res);
+      return this.getCountryByFilter(this.urlFilter,code_lang).subscribe(res => this.selectResponse = res);
     }
-    else{
-      return this.getCountryByFilter(this.urlFilter,this.currentOption).subscribe(res => this.select_response = res);
-    }
+    else
+      return this.getCountryByFilter(this.urlFilter,this.currentOption).subscribe(res =>this.selectResponse = res);
   }
 
   onClickCountry(country: Countries){
@@ -197,7 +196,7 @@ export class CountriesService {
 
   resetVariables(){
     this.select = [];
-    this.select_response = [];
+    this.selectResponse = [];
     this.urlFilter = '';
   }
 }

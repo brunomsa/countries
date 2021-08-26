@@ -8,7 +8,7 @@
             <div class="filter">
                 <mat-form-field appearance="fill">
                     <mat-label>Filtrar por</mat-label>
-                    <mat-select [(value)]="cs.filter_selected" >
+                    <mat-select [(value)]="cs.filterSelected" >
                         <mat-option>Escolha uma opção</mat-option>
                         <mat-option value="Região" (click)="getCurrentSelectOptions()">Região</mat-option>
                         <mat-option value="Capital" (click)="getCurrentSelectOptions()">Capital</mat-option>
@@ -18,9 +18,9 @@
                     </mat-select>
                 </mat-form-field>
             </div>
-            <div *ngIf="cs.filter_selected" class="second-select">
+            <div *ngIf="cs.filterSelected" class="second-select">
                 <mat-form-field appearance="fill">
-                    <mat-label>{{cs.filter_selected}}</mat-label>
+                    <mat-label>{{cs.filterSelected}}</mat-label>
                     <mat-select [(value)]="cs.currentOption">
                         <mat-option>Escolha uma opção</mat-option>
                         <mat-option *ngFor="let x of cs.select" value="{{x}}">{{x}}</mat-option>
@@ -28,18 +28,18 @@
                 </mat-form-field>
             </div>
             <div>
-                <button type="submit" class="btn-search" mat-raised-button [disabled]="!cs.filter_selected || !cs.currentOption">Pesquisar</button>
+                <button type="submit" class="btn-search" mat-raised-button [disabled]="!cs.filterSelected || !cs.currentOption">Pesquisar</button>
             </div>
         </form>
     </section>
 
     <section class="content">
-        <div *ngIf="cs.filter_selected && cs.currentOption" class="flag">
-            <ng-container *ngFor="let x of cs.select_response">
+        <div *ngIf="cs.filterSelected && cs.currentOption" class="flag">
+            <ng-container *ngFor="let x of cs.selectResponse">
                 <img src="{{x.flag}}" alt="Flag {{x.name}}" (click)="cs.onClickCountry(x)">
             </ng-container>
         </div>
-        <div *ngIf="!cs.filter_selected && !cs.currentOption" class="flag">
+        <div *ngIf="!cs.filterSelected && !cs.currentOption" class="flag">
             <img src="{{cs.currentCountry.flag}}" alt="Flag {{cs.currentCountry.name}}" (click)="cs.onClickCountry(cs.currentCountry)">
         </div>
     </section>

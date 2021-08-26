@@ -14,7 +14,7 @@ export class HomeComponent {
   getCurrentSelectOptions(){
     this.cs.resetVariables();
     this.cs.currentOption = '';
-    this.cs.currentFilter= this.cs.formatValueSelect(this.cs.filter_selected);
+    this.cs.currentFilter= this.cs.formatValueSelect(this.cs.filterSelected);
     return this.cs.getOptions(this.cs.currentFilter);
   }
 }
