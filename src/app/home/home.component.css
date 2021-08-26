@@ -4,6 +4,7 @@ body{
 }
 main{
     padding-bottom: 40px;
+    margin: 40px 10%;
 }
 
 form{
@@ -16,7 +17,7 @@ form{
 
 mat-form-field{
     font-family: 'Nunito', "Helvetica Neue", sans-serif;
-    width: 350px;
+    width: 280px;
 }
 
 mat-label{
@@ -36,16 +37,12 @@ mat-option{
 
 
 .btn-search{
-    width: 150px;
+    width: 180px;
     background-color: #6d2080;
     border-radius: 10px;
     color: rgb(207, 207, 207);
     text-transform: uppercase;
     font-family: 'Nunito', "Helvetica Neue", sans-serif;
-}
-
-.content{
-    margin: 30px 15%;
 }
 
 .flag{
@@ -74,7 +71,7 @@ mat-option{
 
     .form div{
         flex: 100%;
-        margin: 10px;
+        margin: 10px 0;
     }
 
     mat-form-field{
@@ -91,4 +88,8 @@ mat-option{
     .flag{
         grid-template-columns: 1fr;
     } 
+
+    mat-form-field{
+        width: 100%;
+    }
 }
