@@ -50,6 +50,7 @@ export class CountriesService {
     languages: ["Português"],
     borders: ["ARG", "BOL", "COL", "GUF", "GUY", "PRY", "PER", "SUR", "URY", "VEN"]
   };
+  flagsDefault: string[] = ["bra", "ecu", "col", "chl", "ita", "fra", "grc", "isl", "jpn", "kor", "tur", "chn", "dza", "egy", "gha", "civ"]
 
   getOptions(value:string){
     var option;
@@ -133,7 +134,7 @@ export class CountriesService {
       return this.getCountryByFilter(this.urlFilter,this.currentOption).subscribe(res =>this.selectResponse = res);
   }
 
-  onClickCountry(country: Countries){
+  onClickCountry(country: Countries | any){
     this.currentCountry = {
       name: country.name,
       capital: country.capital,
@@ -150,6 +151,10 @@ export class CountriesService {
   onClickBorderCountry(country: Countries){
     this.onClickCountry(country);
     this.getCurrentBorders();
+  }
+
+  onClickDefaulCountry(code: string){
+    this.getCountryByCode(code).subscribe(res => this.onClickCountry(res))
   }
 
   formatLanguagesCountry(languages:any[]):string[]{
