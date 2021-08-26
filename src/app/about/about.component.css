@@ -59,6 +59,10 @@ main{
     margin: 40px 80px;
 }
 
+.borders > p{
+    margin: 50px;
+}
+
 .borders > div{
     display: flex;
     flex-wrap: wrap;
@@ -129,8 +133,18 @@ main{
         width: 280px;
     }
 
-/*     .borders img{
+    .borders{
+        margin: 40px 40px;
+    }   
+
+    .borders p{
+        max-width: 220px;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .borders img{
         margin-right: 0;
         width: 220px;
-    } */
+    }
 }
