@@ -56,27 +56,27 @@ main{
 }
 
 .borders{
-    margin: 40px 80px;
+    margin: 40px 10%;
 }
 
 .borders > p{
-    margin: 50px;
+    margin: 50px 0;
 }
 
 .borders > div{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(4,1fr);
 }
 
 .borders img{
-    width: 280px;
-    margin-bottom: 30px;
+    max-width: 90%;
+    margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     cursor: pointer;
 }
 
-@media (max-width:950px){
+@media (max-width:1024px){
     .flag{
         width: 400px;
     }
@@ -85,9 +85,8 @@ main{
         margin-left: 20px;
     }
 
-
-    .borders img{
-        width: 250px;
+    .borders > div{
+        grid-template-columns: repeat(3,1fr);
     }
 }
 
@@ -97,21 +96,14 @@ main{
         margin-left: 0;
         width: max-content;
         margin: 0 auto;
-    }
-
-    .flag{
-        width: 340px;
-    }
+    }    
     
     .borders > div{
-        justify-content: center;
-    }
-    .borders img{
-        margin-right: 20px;
+        grid-template-columns: repeat(2,1fr);
     }
 }
 
-@media (max-width:500px){
+@media (max-width:580px){
     header{
         padding: 0;
     }
@@ -130,7 +122,7 @@ main{
     }
 
     .flag{
-        width: 280px;
+        max-width: 300px;
     }
 
     .borders{
@@ -138,13 +130,22 @@ main{
     }   
 
     .borders p{
-        max-width: 220px;
-        margin: 20px auto;
+        max-width: 100%;
         text-align: center;
     }
 
+    .borders > div{
+        grid-template-columns: 1fr;
+    }
+
+    
     .borders img{
-        margin-right: 0;
-        width: 220px;
+        max-width: 70%;
+    }
+}
+
+@media (max-width:450px){
+    .flag{
+        max-width: 280px;
     }
 }
