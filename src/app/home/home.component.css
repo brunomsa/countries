@@ -23,6 +23,7 @@ mat-form-field{
 mat-label{
     color: #6d2080;
     font-size: 16px;
+    font-weight: 600;
 }
 
 mat-select{
@@ -31,7 +32,7 @@ mat-select{
 
 mat-option{
     font-family: 'Nunito', "Helvetica Neue", sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     color: grey;
 }
 
