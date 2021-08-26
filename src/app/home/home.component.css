@@ -1,3 +1,11 @@
+body{
+    
+    font-family: 'Nunito', "Helvetica Neue", sans-serif !important;
+}
+main{
+    padding-bottom: 40px;
+}
+
 form{
     display: flex;
     justify-content: space-evenly;
@@ -7,16 +15,22 @@ form{
 }
 
 mat-form-field{
+    font-family: 'Nunito', "Helvetica Neue", sans-serif;
     width: 350px;
 }
 
 mat-label{
     color: #6d2080;
-    font-size: 20px;
+    font-size: 16px;
+}
+
+mat-select{
+    font-family: 'Nunito', "Helvetica Neue", sans-serif;
 }
 
 mat-option{
-    font-weight: 500;
+    font-family: 'Nunito', "Helvetica Neue", sans-serif;
+    font-weight: 600;
     color: grey;
 }
 
@@ -25,13 +39,13 @@ mat-option{
     width: 150px;
     background-color: #6d2080;
     border-radius: 10px;
-    color: white;
+    color: rgb(207, 207, 207);
     text-transform: uppercase;
-    font-weight: normal;
+    font-family: 'Nunito', "Helvetica Neue", sans-serif;
 }
 
 .content{
-    margin: 30px 100px;
+    margin: 30px 15%;
 }
 
 .flag{
@@ -70,6 +84,7 @@ mat-option{
     .flag{
         grid-template-columns: repeat(2,1fr);
     } 
+    
 }
 
 @media (max-width:580px){

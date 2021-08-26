@@ -11,7 +11,8 @@ button{
     border: 2px solid #6d2080 !important;
     border-radius: 0px;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
+    font-family: 'Nunito', "Helvetica Neue", sans-serif;
 }
 
 button:hover{
@@ -25,27 +26,23 @@ mat-icon{
 main{
     font-size: 1.4rem;
     color: rgb(78, 78, 78);
+    padding-bottom: 40px;
+    margin: 40px 10%;
+    font-family: 'Nunito', "Helvetica Neue", sans-serif;
 }
 
 .about{
-    display: flex;
-    align-items: center;
-    margin-top: 50px;
-    margin-left: 13%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  
 }
 
 .flag{
-    width: 490px;
-    margin: 20px;
+    width: 90%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 8px;
 }
 
-.content-about{
-    margin-left: 10px;
-}
-
 .content-about p{
-    padding: 8px 0;
+    padding: 10px 0;
 }
 
 .content-about a{
@@ -53,10 +50,6 @@ main{
     cursor: pointer;
     text-decoration: underline;
     text-decoration-color: rgb(109, 32, 128);
-}
-
-.borders{
-    margin: 40px 10%;
 }
 
 .borders > p{
@@ -70,21 +63,13 @@ main{
 }
 
 .borders img{
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     cursor: pointer;
 }
 
 @media (max-width:1024px){
-    .flag{
-        width: 400px;
-    }
-
-    .content-about{
-        margin-left: 20px;
-    }
-
     .borders > div{
         grid-template-columns: repeat(3,1fr);
     }
@@ -92,12 +77,17 @@ main{
 
 @media (max-width:768px){
     .about{
-        display: block;
-        margin-left: 0;
-        width: max-content;
-        margin: 0 auto;
-    }    
+        grid-template-columns: 1fr;
+    }  
+
+    .flag{
+        width: 100%;
+    }
     
+    .content-about{
+        margin: 0;
+    }
+
     .borders > div{
         grid-template-columns: repeat(2,1fr);
     }
@@ -121,31 +111,11 @@ main{
         display: none;
     }
 
-    .flag{
-        max-width: 300px;
-    }
-
-    .borders{
-        margin: 40px 40px;
-    }   
-
-    .borders p{
-        max-width: 100%;
-        text-align: center;
+    main{
+        font-size: 1.2rem;
     }
 
     .borders > div{
         grid-template-columns: 1fr;
-    }
-
-    
-    .borders img{
-        max-width: 70%;
-    }
-}
-
-@media (max-width:450px){
-    .flag{
-        max-width: 280px;
     }
 }

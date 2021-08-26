@@ -1,7 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;600;700&display=swap');
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0; 
+    font-family: 'Nunito', "Helvetica Neue", sans-serif !important; 
+}
 
 header{
     display: flex;
@@ -15,7 +20,8 @@ header img{
     padding: 20px;
 }
 
-
+.mat-form-field{font-family: 'Nunito', "Helvetica Neue", sans-serif}
+.mat-form-field-appearance-fill .mat-form-field-flex{background-color: transparent}
 .mat-form-field-ripple{background-color:lightgrey}
 .mat-form-field.mat-focused .mat-form-field-ripple{background-color:lightgrey}
 .mat-form-field-infix::after{color:lightgrey}
@@ -25,7 +31,7 @@ header img{
 .mat-primary .mat-option.mat-selected:not(.mat-option-disabled){color:#28baa7;}
 .mat-select-arrow,.mat-form-field.mat-focused.mat-primary .mat-select-arrow{color:rgba(0,0,0,.34 )}
 .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple){background-color: transparent}
-.mat-select-value{color:grey; padding: 15px 0 0 10px; font-size: 18px;}
+.mat-select-value{color:grey; padding: 4px 0 0 14px; font-size: 16px;}
 
 
 
