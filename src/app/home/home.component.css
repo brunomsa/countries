@@ -7,19 +7,19 @@ form{
 }
 
 mat-form-field{
-    width: 300px;
+    width: 350px;
 }
 
 mat-label{
     color: #6d2080;
     font-size: 20px;
-    padding-bottom: 10px;
 }
 
 mat-option{
     font-weight: 500;
     color: grey;
 }
+
 
 .btn-search{
     width: 150px;

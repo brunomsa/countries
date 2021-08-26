@@ -16,3 +16,16 @@ header img{
 }
 
 
+.mat-form-field-ripple{background-color:lightgrey}
+.mat-form-field.mat-focused .mat-form-field-ripple{background-color:lightgrey}
+.mat-form-field-infix::after{color:lightgrey}
+.mat-form-field-underline::before{ background-color:lightgrey}
+.mat-option{color:grey}
+.mat-option.mat-active{color:#28baa7}
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled){color:#28baa7;}
+.mat-select-arrow,.mat-form-field.mat-focused.mat-primary .mat-select-arrow{color:rgba(0,0,0,.34 )}
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple){background-color: transparent}
+.mat-select-value{color:grey; padding: 15px 0 0 10px; font-size: 18px;}
+
+
+
