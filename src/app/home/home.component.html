@@ -40,7 +40,6 @@
             </ng-container>
         </div>
         <div *ngIf="!cs.filterSelected && !cs.currentOption" class="flag">
-            <!-- <img src="{{cs.currentCountry.flag}}" alt="Flag {{cs.currentCountry.name}}" (click)="cs.onClickCountry(cs.currentCountry)"> -->
             <ng-container *ngFor="let flag of cs.flagsDefault">
                 <img src="https://restcountries.eu/data/{{flag}}.svg" alt="Flag {{flag}}" (click)="cs.onClickDefaulCountry(flag)">
             </ng-container>
