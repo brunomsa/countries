@@ -10,11 +10,11 @@
                     <mat-label>Filtrar por</mat-label>
                     <mat-select [(value)]="cs.filter_selected" >
                         <mat-option>Escolha uma opção</mat-option>
-                        <mat-option value="Região" (click)="getSelectOptions()">Região</mat-option>
-                        <mat-option value="Capital" (click)="getSelectOptions()">Capital</mat-option>
-                        <mat-option value="Língua" (click)="getSelectOptions()">Língua</mat-option>
-                        <mat-option value="País" (click)="getSelectOptions()">País</mat-option>
-                        <mat-option value="Código de Ligação" (click)="getSelectOptions()">Código de Ligação</mat-option>
+                        <mat-option value="Região" (click)="getCurrentSelectOptions()">Região</mat-option>
+                        <mat-option value="Capital" (click)="getCurrentSelectOptions()">Capital</mat-option>
+                        <mat-option value="Língua" (click)="getCurrentSelectOptions()">Língua</mat-option>
+                        <mat-option value="País" (click)="getCurrentSelectOptions()">País</mat-option>
+                        <mat-option value="Código de Ligação" (click)="getCurrentSelectOptions()">Código de Ligação</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>

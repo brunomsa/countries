@@ -7,16 +7,11 @@ import { CountriesService } from '../countries.service';
   styleUrls: ['./home.component.css']
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   constructor(public cs: CountriesService) { }
 
-
-  ngOnInit(){
-    //this.cs.resetVariables();
-  }
-
-  getSelectOptions(){
+  getCurrentSelectOptions(){
     this.cs.resetVariables();
     this.cs.currentOption = '';
     this.cs.currentFilter= this.cs.formatValueSelect(this.cs.filter_selected);
