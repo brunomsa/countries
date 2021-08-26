@@ -18,8 +18,8 @@ export class AboutComponent implements OnInit {
   }
 
   onClickRegionCountry(value: string){
-    this.cs.getCoutriesByRegion(value)
-    this.cs.searchCountry()
+    this.cs.getCoutriesByRegion(value);
+    this.cs.searchCountry();
     this.router.navigate(['/home']);
   }
 

@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
   getSelectOptions(){
     this.cs.resetVariables();
     this.cs.currentFilter= this.cs.formatValueSelect(this.cs.filter_selected);
-    var option;
-    return this.cs.getOptions(this.cs.currentFilter)
+    return this.cs.getOptions(this.cs.currentFilter);
   }
 }

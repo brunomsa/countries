@@ -99,10 +99,12 @@ export class CountriesService {
   }
 
   getCoutriesByRegion(value: string){
-    this.filter_selected = 'Região'
-    this.currentFilter = 'region'
-    this.currentOption = value
-    this.getOptions('region')
+    this.filter_selected = 'Região';
+    this.currentFilter = 'region';
+    this.currentOption = value;
+    this.select = []
+    this.getOptions('region');
+    console.log(this.select);
   }
 
   getCurrentBorders(){
@@ -144,7 +146,6 @@ export class CountriesService {
       borders: country.borders,
     };
     this.router.navigate(['/about']);
-    console.log(this.currentCountry);
   }
 
   onClickBorderCountry(country: Countries){
