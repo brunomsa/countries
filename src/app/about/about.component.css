@@ -104,6 +104,10 @@ main{
         width: max-content;
     }
 
+    button:hover{
+        background-color: transparent;
+    }
+
     button mat-icon{
         font-size: 2rem;
     }
