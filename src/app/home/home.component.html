@@ -34,6 +34,7 @@
     </section>
 
     <section class="content">
+        <div id="bg-spinner"><mat-spinner id="spinnerLoading"></mat-spinner></div>
         <div *ngIf="cs.filterSelected && cs.currentOption" class="flag">
             <ng-container *ngFor="let x of cs.selectResponse">
                 <img src="{{x.flag}}" alt="Flag {{x.name}}" (click)="cs.onClickCountry(x)">

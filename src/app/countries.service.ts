@@ -51,6 +51,7 @@ export class CountriesService {
     borders: ["ARG", "BOL", "COL", "GUF", "GUY", "PRY", "PER", "SUR", "URY", "VEN"]
   };
   flagsDefault: string[] = ["bra", "ecu", "col", "chl", "ita", "fra", "grc", "isl", "jpn", "kor", "tur", "chn", "dza", "egy", "gha", "civ"]
+  
 
   getOptions(value:string){
     var option;
@@ -120,18 +121,27 @@ export class CountriesService {
   }
 
   searchCountry(){
+    this.displayLoading();
     this.urlFilter = this.formatSearchUrl(this.currentFilter);
     //Format GET with code of nativeName
-    if(this.currentFilter == "languages"){
-      var code_lang = '';
-      for(let i = 0; i < this.languages.length; i++){
-        if(this.languages[i].name == this.currentOption)
-          code_lang = this.languages[i].code;
+    setTimeout(()=>{
+      if(this.currentFilter == "languages"){
+        var code_lang = '';
+        for(let i = 0; i < this.languages.length; i++){
+          if(this.languages[i].name == this.currentOption)
+            code_lang = this.languages[i].code;
+        }
+        return this.getCountryByFilter(this.urlFilter,code_lang).subscribe(res => {
+          this.selectResponse = res
+          this.hideLoading();
+        });
       }
-      return this.getCountryByFilter(this.urlFilter,code_lang).subscribe(res => this.selectResponse = res);
-    }
-    else
-      return this.getCountryByFilter(this.urlFilter,this.currentOption).subscribe(res =>this.selectResponse = res);
+      else
+        return this.getCountryByFilter(this.urlFilter,this.currentOption).subscribe(res => {
+          this.selectResponse = res
+          this.hideLoading();
+        });
+    },500)
   }
 
   onClickCountry(country: Countries | any){
@@ -155,6 +165,28 @@ export class CountriesService {
 
   onClickDefaulCountry(code: string){
     this.getCountryByCode(code).subscribe(res => this.onClickCountry(res))
+  }
+
+  displayLoading(){
+    let box_spinner = document.getElementById("bg-spinner")
+    let spinner = document.getElementById("spinnerLoading")
+
+    spinner?.classList.add("display")
+    box_spinner?.classList.add("display")
+
+    //Remove loading after 10s
+    setTimeout(() =>{
+      spinner?.classList.remove("display")
+      box_spinner?.classList.remove("display")
+    },10000)
+  }
+
+  hideLoading(){
+    let box_spinner = document.getElementById("bg-spinner")
+    let spinner = document.getElementById("spinnerLoading")
+
+    spinner?.classList.remove("display")
+    box_spinner?.classList.remove("display")
   }
 
   formatLanguagesCountry(languages:any[]):string[]{

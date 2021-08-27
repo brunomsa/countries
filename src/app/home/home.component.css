@@ -7,6 +7,28 @@ main{
     margin: 40px 10%;
 }
 
+#bg-spinner{
+    z-index: 1;
+    background: rgba(33, 33, 33, 0.8);   
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+mat-spinner{
+    z-index: 2;
+    display: none;
+}
+
+mat-spinner.display, #bg-spinner.display {
+    display: flex;
+}
+
 form{
     display: flex;
     justify-content: space-evenly;
