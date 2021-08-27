@@ -106,7 +106,7 @@ export class CountriesService {
     this.currentOption = value;
     this.select = []
     this.getOptions('region');
-    console.log(this.select);
+    //console.log(this.select);
   }
 
   getCurrentBorders(){
