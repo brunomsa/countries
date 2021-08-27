@@ -32,7 +32,7 @@ header img{
 .mat-select-arrow,.mat-form-field.mat-focused.mat-primary .mat-select-arrow{color:rgba(0,0,0,.34 )}
 .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple){background-color: transparent}
 .mat-select-value{color:grey; padding: 4px 0 0 14px; font-size: 16px;}
-.mat-progress-spinner circle, .mat-spinner circle{stroke: #561866; stroke-width: 5% !important;}
+.mat-progress-spinner circle, .mat-spinner circle{stroke: #833796; stroke-width: 5% !important;}
 
 
 
