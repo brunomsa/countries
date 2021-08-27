@@ -9,7 +9,7 @@ main{
 
 #bg-spinner{
     z-index: 1;
-    background: rgba(33, 33, 33, 0.8);   
+    background: rgba(33, 33, 33, 0.95);   
     position: fixed;
     top: 0;
     left: 0;
@@ -109,11 +109,11 @@ mat-option{
 }
 
 @media (max-width:580px){
-    .flag{
-        grid-template-columns: 1fr;
-    } 
-
     mat-form-field{
         width: 100%;
     }
+
+    .flag{
+        grid-template-columns: 1fr;
+    } 
 }
